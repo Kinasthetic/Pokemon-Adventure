@@ -345,7 +345,7 @@ int main()
     cout << "Hello " << player.getName() << "! Your adventure awaits!" << endl << endl;
     this_thread::sleep_for(chrono::seconds(1));
     cout << "Saving your data, please wait";
-    ellipses(4);
+    ellipses(3);
     saveGame();
     cout << "Game saved. You are now being teleported to the Kanto Region!" << endl << endl;
   }

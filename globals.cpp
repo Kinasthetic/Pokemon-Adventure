@@ -20,7 +20,7 @@ void addKantoPokemon(string fileName)
   if (!inFS.is_open())
   {
     cout << "Could not open the file: " << fileName << ". The file may be corrupted or may not exist." << endl;
-    return;
+    exit(6);
   }
 
   string header;

@@ -11,6 +11,7 @@ add_executable(PokemonAdventure_v1
     globals.h
     KantoPokemon.cpp
     KantoPokemon.h
+        cmake-build-debug/KantoPokemon.txt
     main.cpp
     Market.cpp
     Market.h
