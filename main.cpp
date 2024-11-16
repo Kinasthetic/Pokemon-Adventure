@@ -12,7 +12,7 @@
 #include "Player.h"
 using namespace std;
 
-bool fileExists(string& filename)
+bool fileExists(const string& filename)
 {
   ifstream infile(filename);
   return infile.good();
@@ -64,7 +64,7 @@ void saveGame()
   outFS << "Lifetime Balls Used: " << player.getBallsUsed() << endl;
 }
 
-int coinsFromCatch(string pokemon)
+int coinsFromCatch(const string& pokemon)
 {
   string rarity = player.getPokemonRarity(pokemon);
     if (rarity == "Common") 
@@ -104,7 +104,7 @@ int coinsFromCatch(string pokemon)
     {
       if (player.getAmuletCoins() == 1) 
       {
-        return rand() % 501 + 1500; 
+        return rand() % 751 + 2250;
       } 
       else 
       {
@@ -154,9 +154,7 @@ int main()
 { 
   srand(time(0));
   cout << fixed << setprecision(2);
-  addKantoPokemon("KantoPokemon.txt"); 
-  player.setName("Admin");
-  player.setCoins(100000);
+  addKantoPokemon("KantoPokemon.txt");
   string input;
   int fixedOption;
   int marketOption = 0;
@@ -440,7 +438,7 @@ int main()
       {
         cout << endl;
       }
-        // Generates a new Pokemon encouter
+        // Generates a new Pokemon encounter
         KantoPokemon newPokemon;
         string rarity = newPokemon.chooseRarity(); 
         string name = newPokemon.choosePokemon(rarity); 
@@ -701,7 +699,6 @@ int main()
         }
         this_thread::sleep_for(chrono::seconds(1));
         cout << endl;
-        continue;
       }
     while (exploreOption == 2)
       {
